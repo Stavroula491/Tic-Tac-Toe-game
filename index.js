@@ -66,7 +66,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 1);
             buttonOne = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
             
     } else if ((buttonOne === 2 && buttonThree === 2 && buttonTwo === 0)||
         (buttonFive === 2 && buttonEight === 2 && buttonTwo === 0)){
@@ -75,7 +75,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 2);
             buttonTwo = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonOne === 2 && buttonTwo === 2 && buttonThree === 0)||
         (buttonSeven === 2 && buttonFive === 2 && buttonThree === 0)||
@@ -85,7 +85,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 3);
             buttonThree = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonOne === 2 && buttonSeven === 2 && buttonFour === 0)||
         (buttonFive === 2 && buttonSix === 2 && buttonFour === 0)){
@@ -94,7 +94,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 4);
             buttonFour = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonOne === 2 && buttonThree === 2 && buttonFive === 0)||
         (buttonTwo === 2 && buttonEight === 2 && buttonFive === 0)||
@@ -105,7 +105,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 5);
             buttonFive = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonThree === 2 && buttonNine === 2 && buttonSix === 0)||
         (buttonFour === 2 && buttonFive === 2 && buttonSix === 0)){
@@ -114,7 +114,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 6);
             buttonSix = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonOne === 2 && buttonFour === 2 && buttonSeven === 0)||
         (buttonThree === 2 && buttonFive === 2 && buttonSeven === 0)||
@@ -124,7 +124,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 7);
             buttonSeven = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonTwo === 2 && buttonFive === 2 && buttonEight === 0)||
         (buttonSeven === 2 && buttonNine === 2 && buttonEight === 0)){
@@ -133,7 +133,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 8);
             buttonEight = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
 
     } else if ((buttonOne === 2 && buttonFive === 2 && buttonNine === 0)||
         (buttonThree === 2 && buttonSix === 2 && buttonNine === 0)||
@@ -143,7 +143,7 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             buttonList = buttonList.filter(buttonList => buttonList !== 9);
             buttonNine = 2;
             turn = 0;
-            setTimeout(checkWinner, 2000);
+            setTimeout(checkWinner, 1000);
             //End of Rule 1
 
         // Start of Rule 2
@@ -336,6 +336,7 @@ function checkWinner(){
         document.querySelector(".container").remove();
         document.querySelector(".draw").classList.add("game-over");
         document.querySelector(".play-again-div").remove();
+
     } else{
             if (turn === 1){
                 computerTurn(randomButton);
@@ -366,7 +367,7 @@ document.querySelector(".corner1-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
 
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
   });
 
@@ -389,9 +390,7 @@ document.querySelector(".middle1-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
 
-    setTimeout(checkWinner, 500);
-    
-    
+    checkWinner();
 
   });
 
@@ -413,8 +412,7 @@ document.querySelector(".corner2-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
     
-    setTimeout(checkWinner, 500);
-    
+    checkWinner();
     
   });
 
@@ -436,9 +434,8 @@ document.querySelector(".middle2-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
     
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
-   
 
   });
 
@@ -460,10 +457,8 @@ document.querySelector(".centre-button").addEventListener("click", function () {
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
     
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
-    
-
   });
 
 document.querySelector(".middle3-button").addEventListener("click", function () {
@@ -484,7 +479,7 @@ document.querySelector(".middle3-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
    
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
     
 
@@ -508,7 +503,7 @@ document.querySelector(".corner3-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
    
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
     
 
@@ -533,7 +528,7 @@ document.querySelector(".middle4-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
     
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
   });
 
@@ -556,7 +551,7 @@ document.querySelector(".corner4-button").addEventListener("click", function () 
 
     randomButton = buttonList[Math.floor((Math.random()*buttonList.length))];
     
-    setTimeout(checkWinner, 500);
+    checkWinner();
     
   });
 
