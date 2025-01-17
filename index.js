@@ -280,6 +280,201 @@ if ((buttonTwo === 2 && buttonThree === 2 && buttonOne === 0)||
             setTimeout(checkWinner, 500);
             
             // End of Rule 3
+        
+        // Start of Rule 4: Create a fork if this is possible
+            //buttonOne
+    } else if ((buttonTwo === 2 && buttonFour === 2 && buttonOne === 0)||
+                (buttonThree === 2 && buttonFour === 2 && buttonOne === 0)||
+                (buttonFour === 2 && buttonNine === 2 && buttonOne === 0)){
+                document.querySelector(".corner1-button").classList.add("button-remover");
+                document.querySelector(".O-image-corner1").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 1);
+                buttonOne = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+
+            //buttonTwo
+    } else if ((buttonOne === 2 && buttonEight === 2 && buttonTwo === 0)||
+                (buttonThree === 2 && buttonEight === 2 && buttonTwo === 0)){
+                document.querySelector(".middle1-button").classList.add("button-remover");
+                document.querySelector(".O-image-middle1").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 2);
+                buttonTwo = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+
+            //buttonThree
+    } else if ((buttonOne === 2 && buttonSix === 2 && buttonThree === 0)||
+                (buttonTwo === 2 && buttonSix === 2 && buttonThree === 0)||
+                (buttonSix === 2 && buttonSeven === 2 && buttonThree === 0)){
+                document.querySelector(".corner2-button").classList.add("button-remover");
+                document.querySelector(".O-image-corner2").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 3);
+                buttonThree = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+
+            //buttonFour
+    } else if ((buttonOne === 2 && buttonSix === 2 && buttonFour === 0)||
+                (buttonSix === 2 && buttonSeven === 2 && buttonFour === 0)){
+                document.querySelector(".middle2-button").classList.add("button-remover");
+                document.querySelector(".O-image-middle2").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 4);
+                buttonFour = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+            
+            //buttonFive
+    } else if ((buttonOne === 2 && buttonEight === 2 && buttonFive === 0)||
+                (buttonOne === 2 && buttonSix === 2 && buttonFive === 0)||
+                (buttonTwo === 2 && buttonFour === 2 && buttonFive === 0)||
+                (buttonTwo === 2 && buttonSix === 2 && buttonFive === 0)||
+                (buttonThree === 2 && buttonFour === 2 && buttonFive === 0)||
+                (buttonThree === 2 && buttonEight === 2 && buttonFive === 0)||
+                (buttonFour === 2 && buttonNine === 2 && buttonFive === 0)||
+                (buttonFour === 2 && buttonEight === 2 && buttonFive === 0)||
+                (buttonSix === 2 && buttonSeven === 2 && buttonFive === 0)||
+                (buttonSix === 2 && buttonEight === 2 && buttonFive === 0)){
+                document.querySelector(".centre-button").classList.add("button-remover");
+                document.querySelector(".O-image-centre").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 5);
+                buttonFive = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+                
+            //buttonSix
+    } else if ((buttonThree === 2 && buttonFour === 2 && buttonSix === 0)||
+                (buttonFour === 2 && buttonNine === 2 && buttonSix === 0)){
+                document.querySelector(".middle3-button").classList.add("button-remover");
+                document.querySelector(".O-image-middle3").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 6);
+                buttonSix = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+
+            //buttonSeven
+    } else if ((buttonOne === 2 && buttonEight === 2 && buttonSeven === 0)||
+                (buttonThree === 2 && buttonFour === 2 && buttonSeven === 0)||
+                (buttonThree === 2 && buttonEight === 2 && buttonSeven === 0)||
+                (buttonFour === 2 && buttonNine === 2 && buttonSeven === 0)||
+                (buttonFour === 2 && buttonEight === 2 && buttonSeven === 0)){
+                document.querySelector(".corner3-button").classList.add("button-remover");
+                document.querySelector(".O-image-corner3").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 7);
+                buttonSeven = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+            
+            //buttonNine
+    } else if ((buttonOne === 2 && buttonEight === 2 && buttonNine === 0)||
+                (buttonOne === 2 && buttonSix === 2 && buttonNine === 0)||
+                (buttonThree === 2 && buttonEight === 2 && buttonNine === 0)||
+                (buttonSix === 2 && buttonSeven === 2 && buttonNine === 0)||
+                (buttonSix === 2 && buttonEight === 2 && buttonNine === 0)){
+                document.querySelector(".corner4-button").classList.add("button-remover");
+                document.querySelector(".O-image-corner4").classList.add("image-display");
+                buttonList = buttonList.filter(buttonList => buttonList !== 9);
+                buttonNine = 2;
+                turn = 0;
+                setTimeout(checkWinner, 500);
+            //End of Rule 4
+
+    //Start of Rule 5: If the user is about to create a fork, block it
+    } else if ((buttonTwo === 1 && buttonFour === 1 && buttonOne === 0)||
+        (buttonThree === 1 && buttonFour === 1 && buttonOne === 0)||
+        (buttonFour === 1 && buttonNine === 1 && buttonOne === 0)){
+        document.querySelector(".corner1-button").classList.add("button-remover");
+        document.querySelector(".O-image-corner1").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 1);
+        buttonOne = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonTwo
+    } else if ((buttonOne === 1 && buttonEight === 1 && buttonTwo === 0)||
+        (buttonThree === 1 && buttonEight === 1 && buttonTwo === 0)){
+        document.querySelector(".middle1-button").classList.add("button-remover");
+        document.querySelector(".O-image-middle1").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 2);
+        buttonTwo = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonThree
+    } else if ((buttonOne === 1 && buttonSix === 1 && buttonThree === 0)||
+        (buttonTwo === 1 && buttonSix === 1 && buttonThree === 0)||
+        (buttonSix === 1 && buttonSeven === 1 && buttonThree === 0)){
+        document.querySelector(".corner2-button").classList.add("button-remover");
+        document.querySelector(".O-image-corner2").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 3);
+        buttonThree = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonFour
+    } else if ((buttonOne === 1 && buttonSix === 1 && buttonFour === 0)||
+        (buttonSix === 1 && buttonSeven === 1 && buttonFour === 0)){
+        document.querySelector(".middle2-button").classList.add("button-remover");
+        document.querySelector(".O-image-middle2").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 4);
+        buttonFour = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonFive
+    } else if ((buttonOne === 1 && buttonEight === 1 && buttonFive === 0)||
+        (buttonOne === 1 && buttonSix === 1 && buttonFive === 0)||
+        (buttonTwo === 1 && buttonFour === 1 && buttonFive === 0)||
+        (buttonTwo === 1 && buttonSix === 1 && buttonFive === 0)||
+        (buttonThree === 1 && buttonFour === 1 && buttonFive === 0)||
+        (buttonThree === 1 && buttonEight === 1 && buttonFive === 0)||
+        (buttonFour === 1 && buttonNine === 1 && buttonFive === 0)||
+        (buttonFour === 1 && buttonEight === 1 && buttonFive === 0)||
+        (buttonSix === 1 && buttonSeven === 1 && buttonFive === 0)||
+        (buttonSix === 1 && buttonEight === 1 && buttonFive === 0)){
+        document.querySelector(".centre-button").classList.add("button-remover");
+        document.querySelector(".O-image-centre").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 5);
+        buttonFive = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+        
+    //buttonSix
+    } else if ((buttonThree === 1 && buttonFour === 1 && buttonSix === 0)||
+        (buttonFour === 1 && buttonNine === 1 && buttonSix === 0)){
+        document.querySelector(".middle3-button").classList.add("button-remover");
+        document.querySelector(".O-image-middle3").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 6);
+        buttonSix = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonSeven
+    } else if ((buttonOne === 1 && buttonEight === 1 && buttonSeven === 0)||
+        (buttonThree === 1 && buttonFour === 1 && buttonSeven === 0)||
+        (buttonThree === 1 && buttonEight === 1 && buttonSeven === 0)||
+        (buttonFour === 1 && buttonNine === 1 && buttonSeven === 0)||
+        (buttonFour === 1 && buttonEight === 1 && buttonSeven === 0)){
+        document.querySelector(".corner3-button").classList.add("button-remover");
+        document.querySelector(".O-image-corner3").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 7);
+        buttonSeven = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+
+    //buttonNine
+    } else if ((buttonOne === 1 && buttonEight === 1 && buttonNine === 0)||
+        (buttonOne === 1 && buttonSix === 1 && buttonNine === 0)||
+        (buttonThree === 1 && buttonEight === 1 && buttonNine === 0)||
+        (buttonSix === 1 && buttonSeven === 1 && buttonNine === 0)||
+        (buttonSix === 1 && buttonEight === 1 && buttonNine === 0)){
+        document.querySelector(".corner4-button").classList.add("button-remover");
+        document.querySelector(".O-image-corner4").classList.add("image-display");
+        buttonList = buttonList.filter(buttonList => buttonList !== 9);
+        buttonNine = 2;
+        turn = 0;
+        setTimeout(checkWinner, 500);
+        // End of Rule 5
 
     } else { //Play randomly
             if (randomButton === 1){
