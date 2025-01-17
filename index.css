@@ -17,12 +17,13 @@ body{
     grid-template-rows: 200px 200px 200px;
     width: 600px;
     height: 600px;
-    
-    
     border-radius: 20px;
     background-color: black;
 }
 
+.container-remover{
+    display: none;
+}
 
 .corner1, .middle1, .corner2, .middle2, .centre, .middle3, .corner3, .middle4, .corner4{
     border: 2px solid black;
@@ -41,10 +42,21 @@ body{
     background-color: #004263;
 }
 
-/* The button-remover class is used to remove the button when the user clicks on it. */
 .button-remover{
     display: none;
 }   
+
+.start-game-div{
+    margin-top: 4%;
+    margin-bottom: 1%;
+}
+
+.start-game-button{
+    border-radius: 20px;
+    height: 70px;
+    width: 150px;
+    background-color: lightcyan;
+}
 
 .play-again-div{
     margin-top: 4%;
